@@ -13,6 +13,11 @@ RUN apt-get -y install curl
 RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 RUN apt-get -y install zsh
 
+# From https://hub.docker.com/_/ubuntu, makes Perl/Guile warnings about locale go away
+RUN apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
+	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.utf8
+
 # Updated docker images for Ubuntu have a built-in user named ubuntu to use
 USER ubuntu
 
