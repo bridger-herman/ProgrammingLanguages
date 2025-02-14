@@ -1,9 +1,10 @@
 FROM ubuntu:24.04
 RUN apt-get -y update
-RUN apt-get -y install git vim clang guile-3.0 valgrind gdb zip curl zsh
+RUN apt-get -y install git vim clang guile-3.0 valgrind gdb zip curl zsh just
 #
 # just is not available via apt;  it wants snap which doesn't work in docker containers so we are manually downloading/running the just script into /usr/local
-RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
+# IT IS NOW!
+#RUN curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 
 # From https://hub.docker.com/_/ubuntu, makes Perl/Guile warnings about locale go away
 RUN apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
