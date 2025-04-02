@@ -1,0 +1,4 @@
+;; Enable Readline
+;; Source: https://stackoverflow.com/a/18631127
+(use-modules (ice-9 readline))
+(activate-readline)
