@@ -31,8 +31,6 @@
         }
     },
     "extensions": [
-        "donjayamanne.git-extension-pack",
-        "mhutchie.git-graph",
         "ms-python.python",
         "ms-vscode.cpptools",
         "ms-vscode.cpptools-extension-pack",
